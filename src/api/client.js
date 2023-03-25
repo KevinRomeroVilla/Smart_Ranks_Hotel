@@ -1,12 +1,16 @@
-import axios from "axios";
+import axios from 'axios';
 
 const client = axios.create({
-  baseURL: "http://demo3134110.mockable.io",
+  baseURL: 'http://demo3134110.mockable.io',
 });
 
 client.interceptors.response.use((response) => response.data);
 
 export const setAuthorizationHeader = (accessToken) =>
-  (client.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`);
+  (client.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`);
+
+export const removeAuthorizationHeader = () => {
+  delete client.defaults.headers.common['Authorization'];
+};
 
 export default client;
