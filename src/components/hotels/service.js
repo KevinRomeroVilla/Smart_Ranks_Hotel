@@ -1,6 +1,6 @@
-import client from "../../api/client";
+import client from '../../api/client';
 
-const hotelsUrl = "/hotelsList";
+const hotelsUrl = '/hotelsList';
 
 export const getHotelsList = () => {
   const url = hotelsUrl;

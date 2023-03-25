@@ -1,16 +1,18 @@
-import { useState } from "react";
-import FormField from "./FormField";
+import { useState } from 'react';
+import FormField from './FormField';
+import { login } from './service';
 
-const LoginPage = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const LoginPage = ({ onLogin }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleChangeUsername = (event) => setUsername(event.target.value);
   const handleChangePassword = (event) => setPassword(event.target.value);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(username, password);
+
+    login({ username, password }).then(onLogin);
   };
 
   const isDisabled = () => {

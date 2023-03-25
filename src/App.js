@@ -1,13 +1,15 @@
-import LoginPage from "./components/auth/LoginPage";
-import HotelsPage from "./components/hotels/HotelsPage";
-import NewHotel from "./components/hotels/NewHotel";
+import { useState } from 'react';
+import LoginPage from './components/auth/LoginPage';
+import HotelsPage from './components/hotels/HotelsPage';
+import NewHotel from './components/hotels/NewHotel';
 
-function App() {
+function App({ isInitiallyLogged }) {
+  const [isLogged, setIsLogged] = useState(isInitiallyLogged);
+
+  const handleLogin = () => setIsLogged(true);
   return (
     <div className="App">
-      <HotelsPage />
-      <NewHotel />
-      <LoginPage />
+      {isLogged ? <HotelsPage /> : <LoginPage onLogin={handleLogin} />}
     </div>
   );
 }
