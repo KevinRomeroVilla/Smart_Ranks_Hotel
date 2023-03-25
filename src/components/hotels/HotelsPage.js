@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { getHotelsList } from "./service";
-import Layout from "../layout/Layout";
+import { useEffect, useState } from 'react';
+import { getHotelsList } from './service';
+import Layout from '../layout/Layout';
 
-import "./HotelsPage.css";
+import './HotelsPage.css';
 
-const HotelsPage = () => {
+const HotelsPage = (props) => {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const HotelsPage = () => {
   }, []);
 
   return (
-    <Layout title="Hotels list">
+    <Layout title="Hotels list" {...props}>
       <div id="listHotels" className="listHotels">
         {hotels.map((hotel) => (
           <div id="containerHotel" className="containerHotel" key={hotel.id}>
