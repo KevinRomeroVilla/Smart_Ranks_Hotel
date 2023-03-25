@@ -3,6 +3,7 @@ import { getHotelsList } from './service';
 import Layout from '../layout/Layout';
 
 import './HotelsPage.css';
+import { Link } from 'react-router-dom';
 
 const HotelsPage = (props) => {
   const [hotels, setHotels] = useState([]);
@@ -18,9 +19,11 @@ const HotelsPage = (props) => {
       <div id="listHotels" className="listHotels">
         {hotels.map((hotel) => (
           <div id="containerHotel" className="containerHotel" key={hotel.id}>
-            <div>{hotel.hotellocation}</div>
-            <div>{hotel.hotelName}</div>
-            <div>{hotel.roomsList.length}</div>
+            <Link to={`/hotels/${hotel.id}`}>
+              <div>{hotel.hotellocation}</div>
+              <div>{hotel.hotelName}</div>
+              <div>{hotel.roomsList.length}</div>
+            </Link>
           </div>
         ))}
       </div>
