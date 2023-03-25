@@ -8,5 +8,6 @@
 .containerHotel {
   padding: 5px;
   border: #999 solid 1px;
+  margin: 2px;
   width: 80%;
 }
