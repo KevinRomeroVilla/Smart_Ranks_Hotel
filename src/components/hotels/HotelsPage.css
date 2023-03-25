@@ -1,0 +1,12 @@
+.listHotels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+.containerHotel {
+  padding: 5px;
+  border: #999 solid 1px;
+  width: 80%;
+}

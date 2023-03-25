@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getHotelsList } from "./service";
+import "./HotelsPage.css";
 
 const HotelsPage = () => {
   const [hotels, setHotels] = useState([]);
@@ -12,11 +13,13 @@ const HotelsPage = () => {
 
   return (
     <div id="listHotels" className="listHotels">
-      <ul>
-        {hotels.map((hotel) => (
-          <li key={hotel.id}>{hotel.hotellocation}</li>
-        ))}
-      </ul>
+      {hotels.map((hotel) => (
+        <div id="containerHotel" className="containerHotel" key={hotel.id}>
+          <div>{hotel.hotellocation}</div>
+          <div>{hotel.hotelName}</div>
+          <div>{hotel.roomsList.length}</div>
+        </div>
+      ))}
     </div>
   );
 };
