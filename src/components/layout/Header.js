@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import AuthContext from '../auth/context';
 import { logout } from '../auth/service';
 import './Header.css';
 
-const Header = ({ isLogged, onLogout }) => {
+const Header = () => {
+  const { isLogged, handleLogout } = useContext(AuthContext);
+
   const handleLogoutClick = async () => {
     await logout();
-    onLogout();
+    handleLogout();
   };
   return (
     <header id="header" className="header">

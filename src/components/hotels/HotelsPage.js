@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getHotelsList } from './service';
-import Layout from '../layout/Layout';
 
 import './HotelsPage.css';
 import { Link } from 'react-router-dom';
+import Page from '../layout/page';
 
 const HotelsPage = (props) => {
   const [hotels, setHotels] = useState([]);
@@ -16,7 +16,7 @@ const HotelsPage = (props) => {
   console.log(hotels);
 
   return (
-    <Layout title="Hotels list" {...props}>
+    <Page title="Hotels list" {...props}>
       <div id="listHotels" className="listHotels">
         {hotels.map((hotel) => (
           <div id="containerHotel" className="containerHotel" key={hotel.id}>
@@ -28,7 +28,7 @@ const HotelsPage = (props) => {
           </div>
         ))}
       </div>
-    </Layout>
+    </Page>
   );
 };
 

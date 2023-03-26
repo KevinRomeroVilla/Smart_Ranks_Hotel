@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Layout from '../layout/Layout';
+import Page from '../layout/page';
 import { getHotelDetail } from './service';
 
 const HotelPage = (props) => {
@@ -16,7 +16,7 @@ const HotelPage = (props) => {
   console.log(hotel);
 
   return (
-    <Layout title="hotel detail" {...props}>
+    <Page title="hotel detail" {...props}>
       <div>
         {hotel.map((x) =>
           x.roomsList.map((y) => (
@@ -28,7 +28,7 @@ const HotelPage = (props) => {
           ))
         )}
       </div>
-    </Layout>
+    </Page>
   );
 };
 

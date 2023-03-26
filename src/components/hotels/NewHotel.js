@@ -1,10 +1,10 @@
-import Layout from '../layout/Layout';
+import Page from '../layout/page';
 
 const NewHotel = (props) => {
   return (
-    <Layout title="New hotel Page" {...props}>
+    <Page title="New hotel Page" {...props}>
       <div>new hotel page</div>
-    </Layout>
+    </Page>
   );
 };
 
