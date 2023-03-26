@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FormField from './FormField';
 import { login } from './service';
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleChangeUsername = (event) => setUsername(event.target.value);
   const handleChangePassword = (event) => setPassword(event.target.value);
@@ -13,6 +16,8 @@ const LoginPage = ({ onLogin }) => {
     event.preventDefault();
 
     login({ username, password }).then(onLogin);
+    const to = location.state?.from?.pathname || '/';
+    navigate(to);
   };
 
   const isDisabled = () => {

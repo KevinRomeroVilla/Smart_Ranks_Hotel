@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './components/auth/LoginPage';
+import RequireAuth from './components/auth/RequireAuth';
 import HotelPage from './components/hotels/Hotelpage';
 import HotelsPage from './components/hotels/HotelsPage';
 import NewHotel from './components/hotels/NewHotel';
@@ -18,8 +19,18 @@ function App({ isInitiallyLogged }) {
           path="/hotels"
           element={<HotelsPage isLogged={isLogged} onLogout={handleLogout} />}
         />
-        <Route path="/hotels/:hotelid" element={<HotelPage />} />
-        <Route path="/hotels/new" element={<NewHotel />} />
+        <Route
+          path="/hotels/:hotelId"
+          element={<HotelPage isLogged={isLogged} onLogout={handleLogout} />}
+        />
+        <Route
+          path="/hotels/new"
+          element={
+            <RequireAuth isLogged={isLogged}>
+              <NewHotel isLogged={isLogged} onLogout={handleLogout} />
+            </RequireAuth>
+          }
+        />
         <Route path="/" element={<Navigate to="hotels" />} />
         <Route path="/404" element={<div>404 | Not found</div>} />
         <Route path="*" element={<Navigate to="/404" />} />

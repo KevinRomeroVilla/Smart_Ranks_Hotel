@@ -1,8 +1,8 @@
-import Layout from "../layout/Layout";
+import Layout from '../layout/Layout';
 
-const NewHotel = () => {
+const NewHotel = (props) => {
   return (
-    <Layout title="New hotel Page">
+    <Layout title="New hotel Page" {...props}>
       <div>new hotel page</div>
     </Layout>
   );

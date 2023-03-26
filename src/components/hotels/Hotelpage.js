@@ -1,9 +1,13 @@
+import { useParams } from 'react-router-dom';
+
 import Layout from '../layout/Layout';
 
-const HotelPage = () => {
+const HotelPage = (props) => {
+  const { hotelId } = useParams();
+
   return (
-    <Layout title="Hotel Page">
-      <div>Hotel Page </div>
+    <Layout title="hotel detail" {...props}>
+      <div>hotel detail {hotelId}</div>
     </Layout>
   );
 };
