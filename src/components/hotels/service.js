@@ -6,3 +6,8 @@ export const getHotelsList = () => {
   const url = hotelsUrl;
   return client.get(url);
 };
+
+export const getHotelDetail = (id) => {
+  const url = `${hotelsUrl}/${id}`;
+  return client.get(url);
+};

@@ -23,7 +23,9 @@ const Header = ({ isLogged, onLogout }) => {
         ) : (
           <div>
             <NavLink to="/hotels">All Hotels</NavLink>
-            <button>login</button>
+            <NavLink to="/login">
+              <button>login</button>
+            </NavLink>
           </div>
         )}
       </nav>

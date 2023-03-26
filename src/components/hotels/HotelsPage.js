@@ -13,6 +13,7 @@ const HotelsPage = (props) => {
       setHotels(hotels);
     });
   }, []);
+  console.log(hotels);
 
   return (
     <Layout title="Hotels list" {...props}>
