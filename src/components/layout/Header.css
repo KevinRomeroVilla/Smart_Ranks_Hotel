@@ -1,4 +1,13 @@
 .header {
   display: flex;
   justify-content: space-between;
+  background-color: #008000;
+}
+
+button:hover {
+  background-color: #00ff00;
+}
+
+button {
+  background-color: #008800;
 }

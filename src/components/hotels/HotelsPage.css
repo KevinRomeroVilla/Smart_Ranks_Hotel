@@ -1,13 +1,34 @@
-.listHotels {
+.maincontent {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5px;
+}
+
+.mainform {
+  flex-grow: 1;
 }
 
 .containerHotel {
+  flex-grow: 100;
+}
+
+.listHotel {
   padding: 5px;
   border: #999 solid 1px;
   margin: 2px;
-  width: 80%;
+}
+
+.hotelPage {
+  padding: 5px;
+  border: #999 solid 1px;
+  margin: 2px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 5px;
+}
+
+.link:hover {
+  color: blue;
 }

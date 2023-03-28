@@ -5,6 +5,7 @@ import LoginPage from './components/auth/LoginPage';
 import RequireAuth from './components/auth/RequireAuth';
 import HotelPage from './components/hotels/Hotelpage';
 import HotelsPage from './components/hotels/HotelsPage';
+import HotelsReserve from './components/hotels/hotelsReserve';
 import NewHotel from './components/hotels/NewHotel';
 import Layout from './components/layout/Layout';
 
@@ -21,6 +22,7 @@ function App({ isInitiallyLogged }) {
           <Route path="/hotels" element={<Layout />}>
             <Route index element={<HotelsPage />} />
             <Route path=":hotelId" element={<HotelPage />} />
+            <Route path="HotelsReserve" element={<HotelsReserve />} />
             <Route
               path="new"
               element={

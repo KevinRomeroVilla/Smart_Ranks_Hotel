@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
+import './page.css';
 
 const Page = ({ title, children }) => {
   return (
-    <Fragment>
+    <div className="mainContent">
       <h2>{title}</h2>
       <section>{children}</section>
-    </Fragment>
+    </div>
   );
 };
 
